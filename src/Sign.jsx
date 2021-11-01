@@ -1,10 +1,12 @@
 import { React, useState } from 'react'
 import { TextField, Button, FormControlLabel, Checkbox } from '@material-ui/core'
+
 import "./App.css"
 import Circle from '@mui/icons-material/Circle';
+import { Link } from 'react-router-dom';
 
 
-export const Signup = () => {
+const Signup = () => {
 
     // const [name, setName] = useState("")
     // const [email, setEmail] = useState("")
@@ -172,6 +174,7 @@ export const Signup = () => {
                             <Checkbox size='small' name="Tnc"
                                 value={formvalues.Tnc}
                                 onChange={handleChange}
+                                checked
                             />
                         }
                         label="I agree to Terms and Conditions"
@@ -187,8 +190,12 @@ export const Signup = () => {
                     >
                         Create New Account
                     </Button>
+                    Have account? <Link to="/login">
+                Log in</Link>
                 </form>
             </div>
         </div >
     )
 }
+
+export default Signup;
